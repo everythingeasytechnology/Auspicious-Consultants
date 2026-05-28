@@ -1,9 +1,9 @@
 <?php
 // Database Configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');       // Change to your MySQL username
-define('DB_PASS', '');           // Change to your MySQL password
-define('DB_NAME', 'auspicious_consultants');
+define('DB_USER', 'auspaato_auspicious_user');       // Change to your MySQL username
+define('DB_PASS', 'RIy?gr.^hlks&J6S');           // Change to your MySQL password
+define('DB_NAME', 'auspaato_auspicious_database');
 
 function getDBConnection() {
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);

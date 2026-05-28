@@ -24,6 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
     loadHTML("nav.html", "nav-placeholder"),
     loadHTML("footer.html", "footer-placeholder"),
   ]).then(() => {
+    // Close mobile menu when any link is clicked and allow navigation
+    const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const offcanvasElement = document.getElementById("offcanvasNavbar");
+        if (offcanvasElement) {
+          const offcanvasInstance =
+            bootstrap.Offcanvas.getInstance(offcanvasElement);
+          if (offcanvasInstance) {
+            offcanvasInstance.hide();
+          }
+        }
+        // Allow the link to navigate normally
+      });
+    });
+
     // Update active link in navbar
     const currentPath =
       window.location.pathname.split("/").pop() || "index.html";
